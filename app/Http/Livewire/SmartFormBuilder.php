@@ -726,6 +726,7 @@ class SmartFormBuilder extends Component
     public function createNewFormRow($frName)
     {
       $this->formOpts = session("formOpts");
+      //we store formoption in session to speed program
    
        $opts = $this->formOpts[$frName];  
        // get form Options 

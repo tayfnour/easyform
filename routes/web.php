@@ -18,7 +18,7 @@ use App\Http\Livewire\HtmlEditorComponent;
 use App\Http\Livewire\TreeManagerComponent;
 
 
-// stat git
+// statarting github
 
 Route::get('editorExpress/{comp_name?}/',function($comp_name ='smart-form-builder'){   
 
