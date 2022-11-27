@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/app_style.css')}}">
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+        <style>
+           
+
+            .showcrud{
+            background-image:url('{{ asset("images/eyeOn.jpg") }}');
+            background-repeat: no-repeat;
+            background-position:center center;
+            }
+
+            .del_child{
+            background-image:url('{{ asset("images/del.jpg") }}');
+            background-repeat: no-repeat;
+            background-position:center center;
+            }
+
+            .insert_node{
+            background-image:url('{{ asset("images/add.jpg") }}');
+            background-repeat: no-repeat;
+            background-position:center center;
+            }
+
+            .edit_node{
+            background-image:url('{{ asset("images/update.jpg") }}');
+            background-repeat: no-repeat;
+            background-position:center center;
+            }
+
+
+            .add_child{
+            background-image:url('{{ asset("images/branch.jpg") }}');
+            background-repeat: no-repeat;
+            background-position:center center;
+            }
+        </style>
+
+        @livewireStyles
+      
+       
+            
+
+        <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}" defer></script>
+    </head>
+    <body class="font-sans antialiased">
+        <x-jet-banner />
+
+        <div class="min-h-screen bg-gray-100">
+            @livewire('navigation-menu')
+
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
+
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
+
+        @stack('modals')
+      
+        @livewireScripts
+
+        <script src="{{ asset('assets/js/jquery.min.js')}}"  crossorigin="anonymous"></script>
+        <script src="{{ asset('assets/js/app_script.js')}}"  crossorigin="anonymous"></script>
+  
+       
+    </body>
+</html>

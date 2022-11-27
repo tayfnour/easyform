@@ -1,0 +1,35 @@
+.autoComplete ul li{
+    cursor: pointer;
+    border-bottom:  1px #e6e600 solid;
+    font-family: tahoma;
+    font-size: 14px;
+    list-style-type: none;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.autoComplete ul li:hover{
+    background: #ffff99;
+}
+
+.autoComplete {
+  padding:5px;
+  position: relative;
+}
+
+#closeAuto{
+    display: inline-block;
+    background-color: #6b6a6a;
+    color: white;
+    position: absolute;
+    width: 20px;
+    right: 10px;
+    font-size: 19px;
+    text-align: center;
+    height: 31px;
+    cursor: pointer;
+
+}
+
+
+
