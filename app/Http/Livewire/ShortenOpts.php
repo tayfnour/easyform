@@ -649,7 +649,7 @@ class ShortenOpts extends Component
         // $selTable;
         $res = DB::table("coloptions")->where("formName", $this->newFormName)->first();
 
-        if (trim($this->newFormName != "")) { // if not spaces
+        if (trim($this->newFormName) != "") { // if not spaces
 
             if ($res) {
 
@@ -657,15 +657,16 @@ class ShortenOpts extends Component
 
             } else {
 
-                $this->formType = (int) filter_var($this->formType, FILTER_SANITIZE_NUMBER_INT);
+              //  $this->formType = (int) filter_var($this->formType, FILTER_SANITIZE_NUMBER_INT);
                 $autoIncName = $this->getAutoIncreamentName($this->selTable);
-                $res = $this->regTableInColOptions($this->selTable, $autoIncName, $this->newFormName, $this->formType);
+                $res = $this->regTableInColOptions($this->selTable, $autoIncName, $this->newFormName);
 
-                $this->msgs[]="The Form has  created Form";
+                $this->msgs[]="The Form has created Form";
             }
 
         } else {
-            $this->msgs[]="the Name of form require";
+              
+                $this->msgs[]="the Name of form require";
         }
 
     }
